@@ -1,0 +1,25 @@
+{
+  "name": "Advanced-Tic-Tac-Toe",
+  "version": "1.0.0",
+  "description": "![](https://raw.githubusercontent.com/Supsource/Advanced-Tic-Tac-Toe/main/Screenshot%202021-11-28%20at%2011.54.08%20AM%201.png)\r ![](https://raw.githubusercontent.com/Supsource/Advanced-Tic-Tac-Toe/main/Screenshot%202021-11-28%20at%2011.54.35%20AM.png)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Supsource/Advanced-Tic-Tac-Toe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Supsource/Advanced-Tic-Tac-Toe/issues"
+  },
+  "homepage": "https://github.com/Supsource/Advanced-Tic-Tac-Toe#readme",
+  "dependencies": {
+    "express": "^4.19.2",
+    "http": "0.0.1-security",
+    "socket.io": "^4.7.5"
+  }
+}

@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="styles.css">
+  <script src="/socket.io/socket.io.js" defer></script>
   <script src="script.js" defer></script>
+  <script src="functions.js" defer></script>
   <title>Advanced Tic-Tac-Toe</title>
 </head>
 <body>
   <div class="board" id="board">
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
-    <div class="cell" data-cell></div>
+    <div id="1" class="cell" data-cell></div>
+    <div id="2" class="cell" data-cell></div>
+    <div id="3" class="cell" data-cell></div>
+    <div id="4" class="cell" data-cell></div>
+    <div id="5" class="cell" data-cell></div>
+    <div id="6" class="cell" data-cell></div>
+    <div id="7" class="cell" data-cell></div>
+    <div id="8" class="cell" data-cell></div>
+    <div id="9" class="cell" data-cell></div>
   </div>
   <div class="winning-message" id="winningMessage">
     <div data-winning-message-text></div>

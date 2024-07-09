@@ -3,3 +3,9 @@
 ![](https://raw.githubusercontent.com/Supsource/Advanced-Tic-Tac-Toe/main/Screenshot%202021-11-28%20at%2011.54.35%20AM.png)
 
  Advanced Tic Tac Toe Using Javascript
+
+# Basic setup
+
+1. Clone the repo locally
+2. In the terminal, write 'node server'
+3. Visit http://localhost:3000

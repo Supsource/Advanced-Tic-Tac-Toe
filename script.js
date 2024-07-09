@@ -1,3 +1,4 @@
+const socket = io()
 const X_CLASS = 'x'
 const CIRCLE_CLASS = 'circle'
 const WINNING_COMBINATIONS = [
@@ -15,9 +16,9 @@ const board = document.getElementById('board')
 const winningMessageElement = document.getElementById('winningMessage')
 const restartButton = document.getElementById('restartButton')
 const winningMessageTextElement = document.querySelector('[data-winning-message-text]')
-let circleTurn
 
-startGame()
+let userTeam
+let circleTurn
 
 restartButton.addEventListener('click', startGame)
 
@@ -36,6 +37,10 @@ function startGame() {
 function handleClick(e) {
   const cell = e.target
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
+  if (currentClass != userTeam) {
+    console.warn({ userTeam }, { currentClass });
+    return
+  }
   placeMark(cell, currentClass)
   if (checkWin(currentClass)) {
     endGame(false)
@@ -43,7 +48,6 @@ function handleClick(e) {
     endGame(true)
   } else {
     swapTurns()
-    setBoardHoverClass()
   }
 }
 
@@ -63,17 +67,16 @@ function isDraw() {
 }
 
 function placeMark(cell, currentClass) {
-  cell.classList.add(currentClass)
+  socket.emit('update', { 'cellId': cell.id, 'currentClass': currentClass })
 }
 
 function swapTurns() {
   circleTurn = !circleTurn
+  socket.emit('updateTurn', circleTurn)
 }
 
 function setBoardHoverClass() {
-  board.classList.remove(X_CLASS)
-  board.classList.remove(CIRCLE_CLASS)
-  if (circleTurn) {
+  if (userTeam == CIRCLE_CLASS) {
     board.classList.add(CIRCLE_CLASS)
   } else {
     board.classList.add(X_CLASS)
